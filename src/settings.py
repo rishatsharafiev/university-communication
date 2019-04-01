@@ -7,7 +7,7 @@ DEBUG = env('DEBUG', cast=bool, default=False)
 
 # Application
 APP_HOST = env('APP_HOST', cast=str, default='0.0.0.0')
-APP_PORT = env('APP_PORT', cast=int, default=8080)
+APP_PORT = env('APP_PORT', cast=int, default=5000)
 
 LOGGING = {
     'version': 1,
