@@ -31,4 +31,3 @@ cp src/env-example src/.env
 cp devops/env-compose devops/.env
 cd devops && docker-compose -p university-communication up
 ```
-

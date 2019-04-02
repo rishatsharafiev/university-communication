@@ -54,6 +54,6 @@ KAFKA_TOPIC_DOWNLOAD = env('KAFKA_TOPIC_DOWNLOAD', cast=str, default='university
 KAFKA_TOPIC_SUCCESS = env('KAFKA_TOPIC_SUCCESS', cast=str, default='university-success')
 
 # Webhook
-WEBHOOK_URL = env('WEBHOOK_URL', cast=str, default='0.0.0.0:8000')
+WEBHOOK_URL = env('WEBHOOK_URL', cast=str, default='http://0.0.0.0:8000/download/webhook')
 
 loop = asyncio.get_event_loop()
