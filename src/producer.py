@@ -1,3 +1,5 @@
+import json
+
 from aiohttp import web
 from aiokafka import AIOKafkaProducer
 from src import settings
@@ -7,12 +9,15 @@ async def producer_handler(request):
     """Producer handler"""
     producer = AIOKafkaProducer(loop=settings.loop, bootstrap_servers=settings.KAFKA_BOOTSTRAP_SERVERS)
 
-    message = await request.json()
-
     await producer.start()
     try:
-        print(message)
-        await producer.send_and_wait(settings.KAFKA_TOPIC_SUCCESS, b"Super message")
+        message = await request.json()
+
+        if 'action' in message and message.get('action') == 'success' and 'url' in message:
+            body = json.dumps(message).encode('utf-8')
+            await producer.send_and_wait(settings.KAFKA_TOPIC_SUCCESS, body)
+    except json.decoder.JSONDecodeError:
+        pass
     finally:
         await producer.stop()
 
