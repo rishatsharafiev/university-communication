@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b02acbf3213ce3b409733691a4c8772201b78c3ebbf0a5185241b585d92c60c0"
+            "sha256": "95e15c2fe48d884b2f5b5d568cd38dd06bcfd35952c9b9311b897b0545ece1f7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -43,6 +43,13 @@
             ],
             "index": "pypi",
             "version": "==3.5.4"
+        },
+        "aiokafka": {
+            "hashes": [
+                "sha256:25b31f9759427fb9334de5a6224df5ac92247d8af9c13eebf8afddd48a5c05b8"
+            ],
+            "index": "pypi",
+            "version": "==0.5.1"
         },
         "async-timeout": {
             "hashes": [
@@ -123,6 +130,13 @@
             ],
             "markers": "python_version < '3.7'",
             "version": "==1.1.0"
+        },
+        "kafka-python": {
+            "hashes": [
+                "sha256:078acdcd1fc6eddacc46d437c664998b4cf7613b7e79ced66a460965f2648f88",
+                "sha256:0b56f286b674dcb331d80c1d39a01a753cc3acc962bee707da5f207db74f0a26"
+            ],
+            "version": "==1.4.3"
         },
         "mccabe": {
             "hashes": [

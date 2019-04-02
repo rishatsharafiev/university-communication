@@ -1,6 +1,9 @@
-from src.apps.kafka.apps import kafka_app
+from aiohttp import web
+from .producer import producer_handler
 
 
 def setup_routes(app):
     """Setup application routes"""
-    app.add_subapp('/kafka/', kafka_app)
+    app.add_routes([
+        web.post('/producer', producer_handler)
+    ])

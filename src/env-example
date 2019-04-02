@@ -4,3 +4,6 @@ DEBUG=
 # Application
 APP_HOST=
 APP_PORT=
+
+# Kafka
+BOOTSTRAP_SERVERS=
