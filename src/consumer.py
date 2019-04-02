@@ -6,7 +6,7 @@ async def consume_handler():
     """Consume handler"""
     consumer = AIOKafkaConsumer(
         settings.KAFKA_TOPIC_DOWNLOAD,
-        loop=settings.loop, bootstrap_servers=settings.BOOTSTRAP_SERVERS)
+        loop=settings.loop, bootstrap_servers=settings.KAFKA_BOOTSTRAP_SERVERS)
 
     await consumer.start()
     try:

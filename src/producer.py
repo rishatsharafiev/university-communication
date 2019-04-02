@@ -5,7 +5,7 @@ from src import settings
 
 async def producer_handler(request):
     """Producer handler"""
-    producer = AIOKafkaProducer(loop=settings.loop, bootstrap_servers=settings.BOOTSTRAP_SERVERS)
+    producer = AIOKafkaProducer(loop=settings.loop, bootstrap_servers=settings.KAFKA_BOOTSTRAP_SERVERS)
 
     message = await request.json()
 
