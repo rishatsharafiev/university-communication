@@ -27,6 +27,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic university-do
 
 ### Запуск приложения
 ```
+cp src/env-example src/.env
+cp devops/env-compose devops/.env
 cd devops && docker-compose -p university-communication up
 ```
-

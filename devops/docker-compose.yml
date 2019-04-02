@@ -1,0 +1,27 @@
+version: "3.5"
+networks:
+  backend:
+    driver: ${NETWORKS_DRIVER}
+
+volumes:
+  app_log:
+    driver: ${VOLUMES_DRIVER}
+  nginx_log:
+    driver: ${VOLUMES_DRIVER}
+
+services:
+### Backend Server #########################################
+  app:
+    network_mode: "host"
+    build:
+      context: ../
+      dockerfile: devops/app/Dockerfile
+    volumes:
+      - app_log:/var/log
+      - ${APP_PATH}:/app
+    ports:
+      - "${APP_HOST_PORT}:5000"
+      - "${APP_SUPERUSER_PORT}:9001"
+    environment:
+      - SUPERVISOR_USERNAME=${SUPERVISOR_USERNAME}
+      - SUPERVISOR_PASSWORD=${SUPERVISOR_PASSWORD}
